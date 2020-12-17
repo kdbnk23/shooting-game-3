@@ -65,20 +65,23 @@ function draw() {
     textSize(50)
     text("You Win!!",400,200)
   }
-  if (keyDown("space")){
+  if (keyDown("space")||touches.length>0){
     var temp_bullet = createBullet();  
     temp_bullet.x = player.x;
+    touches=[]
   }
   if (bulletGroup.isTouching(opponent)){
 bulletGroup.destroyEach()
 opponent.destroy()
 score=score+5
   }
-  if (mousePressedOver(rightButton)){
+  if (mousePressedOver(rightButton)||touches.length>0){
     player.velocityX=2
+    touches=[]
   }
-  if (mousePressedOver(leftButton)){
+  if (mousePressedOver(leftButton)||touches.length>0){
     player.velocityX=-2
+    touches=[]
   }
   if (bulletGroup.isTouching(obstacle1)){
     bulletGroup.destroyEach()
