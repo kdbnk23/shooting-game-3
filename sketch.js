@@ -76,11 +76,11 @@ opponent.destroy()
 score=score+5
   }
   if (mousePressedOver(rightButton)||touches.length>0){
-    player.velocityX=2
+    player.position.x=player.position.x+2
     touches=[]
   }
   if (mousePressedOver(leftButton)||touches.length>0){
-    player.velocityX=-2
+    player.position.x=player.position.x-2
     touches=[]
   }
   if (bulletGroup.isTouching(obstacle1)){
